@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-event-stream/event-stream/index.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-event-stream/node_modules/event-stream/index.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-event-stream">npmtest-event-stream (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-event-stream/event-stream/index.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-event-stream/node_modules/event-stream/index.js</span></h1>
     <h2>
         
         Statements: <span class="metric">13.77% <small>(23 / 167)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-event-stream/event-stream/</a> &#187; index.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-event-stream/node_modules/event-stream/</a> » index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -879,7 +877,7 @@ var Stream = require('stream').Stream
   , pause = require('pause-stream')
   , split = require('split')
   , pipeline = require('stream-combiner')
-  , immediately = global.setImmediate || <span class="branch-1 cbranch-no" title="branch not covered" >process.nextTick;</span>
+  , immediately = global.setImmediate || <span class="branch-1 cbranch-no" title="branch not covered">process.nextTick;</span>
 &nbsp;
 es.Stream = Stream //re-export Stream from core
 es.through = through
@@ -895,43 +893,43 @@ es.pipeline = es.connect = es.pipe = pipeline
 // will emit end only once
 &nbsp;
 es.concat = //actually this should be called concat
-es.merge = <span class="fstat-no" title="function not covered" >function (/*streams...*/) {</span>
-<span class="cstat-no" title="statement not covered" >  var toMerge = [].slice.call(arguments)</span>
-<span class="cstat-no" title="statement not covered" >  if (toMerge.length === 1 &amp;&amp; (toMerge[0] instanceof Array)) {</span>
-<span class="cstat-no" title="statement not covered" >    toMerge = toMerge[0] </span>//handle array as arguments object
+es.merge = <span class="fstat-no" title="function not covered">function (/*streams...*/) {</span>
+<span class="cstat-no" title="statement not covered">  var toMerge = [].slice.call(arguments)</span>
+<span class="cstat-no" title="statement not covered">  if (toMerge.length === 1 &amp;&amp; (toMerge[0] instanceof Array)) {</span>
+<span class="cstat-no" title="statement not covered">    toMerge = toMerge[0] </span>//handle array as arguments object
   }
-<span class="cstat-no" title="statement not covered" >  var stream = new Stream()</span>
-<span class="cstat-no" title="statement not covered" >  stream.setMaxListeners(0) </span>// allow adding more than 11 streams
-<span class="cstat-no" title="statement not covered" >  var endCount = 0</span>
-<span class="cstat-no" title="statement not covered" >  stream.writable = stream.readable = true</span>
+<span class="cstat-no" title="statement not covered">  var stream = new Stream()</span>
+<span class="cstat-no" title="statement not covered">  stream.setMaxListeners(0) </span>// allow adding more than 11 streams
+<span class="cstat-no" title="statement not covered">  var endCount = 0</span>
+<span class="cstat-no" title="statement not covered">  stream.writable = stream.readable = true</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (toMerge.length) {</span>
-<span class="cstat-no" title="statement not covered" >    toMerge.forEach(<span class="fstat-no" title="function not covered" >function (e) {</span></span>
-<span class="cstat-no" title="statement not covered" >      e.pipe(stream, {end: false})</span>
-<span class="cstat-no" title="statement not covered" >      var ended = false</span>
-<span class="cstat-no" title="statement not covered" >      e.on('end', <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >        if(ended) <span class="cstat-no" title="statement not covered" >return</span></span>
-<span class="cstat-no" title="statement not covered" >        ended = true</span>
-<span class="cstat-no" title="statement not covered" >        endCount ++</span>
-<span class="cstat-no" title="statement not covered" >        if(endCount == toMerge.length)</span>
-<span class="cstat-no" title="statement not covered" >          stream.emit('end')</span>
+<span class="cstat-no" title="statement not covered">  if (toMerge.length) {</span>
+<span class="cstat-no" title="statement not covered">    toMerge.forEach(<span class="fstat-no" title="function not covered">function (e) {</span></span>
+<span class="cstat-no" title="statement not covered">      e.pipe(stream, {end: false})</span>
+<span class="cstat-no" title="statement not covered">      var ended = false</span>
+<span class="cstat-no" title="statement not covered">      e.on('end', <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">        if(ended) <span class="cstat-no" title="statement not covered">return</span></span>
+<span class="cstat-no" title="statement not covered">        ended = true</span>
+<span class="cstat-no" title="statement not covered">        endCount ++</span>
+<span class="cstat-no" title="statement not covered">        if(endCount == toMerge.length)</span>
+<span class="cstat-no" title="statement not covered">          stream.emit('end')</span>
       })
     })
   } else {
-<span class="cstat-no" title="statement not covered" >    process.nextTick(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >      stream.emit('end')</span>
+<span class="cstat-no" title="statement not covered">    process.nextTick(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">      stream.emit('end')</span>
     })
   }
   
-<span class="cstat-no" title="statement not covered" >  stream.write = <span class="fstat-no" title="function not covered" >function (data) {</span></span>
-<span class="cstat-no" title="statement not covered" >    this.emit('data', data)</span>
+<span class="cstat-no" title="statement not covered">  stream.write = <span class="fstat-no" title="function not covered">function (data) {</span></span>
+<span class="cstat-no" title="statement not covered">    this.emit('data', data)</span>
   }
-<span class="cstat-no" title="statement not covered" >  stream.destroy = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >    toMerge.forEach(<span class="fstat-no" title="function not covered" >function (e) {</span></span>
-<span class="cstat-no" title="statement not covered" >      if(e.destroy) <span class="cstat-no" title="statement not covered" >e.destroy()</span></span>
+<span class="cstat-no" title="statement not covered">  stream.destroy = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">    toMerge.forEach(<span class="fstat-no" title="function not covered">function (e) {</span></span>
+<span class="cstat-no" title="statement not covered">      if(e.destroy) <span class="cstat-no" title="statement not covered">e.destroy()</span></span>
     })
   }
-<span class="cstat-no" title="statement not covered" >  return stream</span>
+<span class="cstat-no" title="statement not covered">  return stream</span>
 }
 &nbsp;
 &nbsp;
@@ -939,63 +937,63 @@ es.merge = <span class="fstat-no" title="function not covered" >function (/*stre
 // and calls back when 'end' occurs
 // mainly I'm using this to test the other functions
 &nbsp;
-es.writeArray = <span class="fstat-no" title="function not covered" >function (done) {</span>
-<span class="cstat-no" title="statement not covered" >  if ('function' !== typeof done)</span>
-<span class="cstat-no" title="statement not covered" >    throw new Error('function writeArray (done): done must be function')</span>
+es.writeArray = <span class="fstat-no" title="function not covered">function (done) {</span>
+<span class="cstat-no" title="statement not covered">  if ('function' !== typeof done)</span>
+<span class="cstat-no" title="statement not covered">    throw new Error('function writeArray (done): done must be function')</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var a = new Stream ()</span>
+<span class="cstat-no" title="statement not covered">  var a = new Stream ()</span>
     , array = [], isDone = false
-<span class="cstat-no" title="statement not covered" >  a.write = <span class="fstat-no" title="function not covered" >function (l) {</span></span>
-<span class="cstat-no" title="statement not covered" >    array.push(l)</span>
+<span class="cstat-no" title="statement not covered">  a.write = <span class="fstat-no" title="function not covered">function (l) {</span></span>
+<span class="cstat-no" title="statement not covered">    array.push(l)</span>
   }
-<span class="cstat-no" title="statement not covered" >  a.end = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >    isDone = true</span>
-<span class="cstat-no" title="statement not covered" >    done(null, array)</span>
+<span class="cstat-no" title="statement not covered">  a.end = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">    isDone = true</span>
+<span class="cstat-no" title="statement not covered">    done(null, array)</span>
   }
-<span class="cstat-no" title="statement not covered" >  a.writable = true</span>
-<span class="cstat-no" title="statement not covered" >  a.readable = false</span>
-<span class="cstat-no" title="statement not covered" >  a.destroy = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >    a.writable = a.readable = false</span>
-<span class="cstat-no" title="statement not covered" >    if(isDone) <span class="cstat-no" title="statement not covered" >return</span></span>
-<span class="cstat-no" title="statement not covered" >    done(new Error('destroyed before end'), array)</span>
+<span class="cstat-no" title="statement not covered">  a.writable = true</span>
+<span class="cstat-no" title="statement not covered">  a.readable = false</span>
+<span class="cstat-no" title="statement not covered">  a.destroy = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">    a.writable = a.readable = false</span>
+<span class="cstat-no" title="statement not covered">    if(isDone) <span class="cstat-no" title="statement not covered">return</span></span>
+<span class="cstat-no" title="statement not covered">    done(new Error('destroyed before end'), array)</span>
   }
-<span class="cstat-no" title="statement not covered" >  return a</span>
+<span class="cstat-no" title="statement not covered">  return a</span>
 }
 &nbsp;
 //return a Stream that reads the properties of an object
 //respecting pause() and resume()
 &nbsp;
-es.readArray = <span class="fstat-no" title="function not covered" >function (array) {</span>
-<span class="cstat-no" title="statement not covered" >  var stream = new Stream()</span>
+es.readArray = <span class="fstat-no" title="function not covered">function (array) {</span>
+<span class="cstat-no" title="statement not covered">  var stream = new Stream()</span>
     , i = 0
     , paused = false
     , ended = false
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  stream.readable = true</span>
-<span class="cstat-no" title="statement not covered" >  stream.writable = false</span>
+<span class="cstat-no" title="statement not covered">  stream.readable = true</span>
+<span class="cstat-no" title="statement not covered">  stream.writable = false</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if(!Array.isArray(array))</span>
-<span class="cstat-no" title="statement not covered" >    throw new Error('event-stream.read expects an array')</span>
+<span class="cstat-no" title="statement not covered">  if(!Array.isArray(array))</span>
+<span class="cstat-no" title="statement not covered">    throw new Error('event-stream.read expects an array')</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  stream.resume = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >    if(ended) <span class="cstat-no" title="statement not covered" >return</span></span>
-<span class="cstat-no" title="statement not covered" >    paused = false</span>
-<span class="cstat-no" title="statement not covered" >    var l = array.length</span>
-<span class="cstat-no" title="statement not covered" >    while(i &lt; l &amp;&amp; !paused &amp;&amp; !ended) {</span>
-<span class="cstat-no" title="statement not covered" >      stream.emit('data', array[i++])</span>
+<span class="cstat-no" title="statement not covered">  stream.resume = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">    if(ended) <span class="cstat-no" title="statement not covered">return</span></span>
+<span class="cstat-no" title="statement not covered">    paused = false</span>
+<span class="cstat-no" title="statement not covered">    var l = array.length</span>
+<span class="cstat-no" title="statement not covered">    while(i &lt; l &amp;&amp; !paused &amp;&amp; !ended) {</span>
+<span class="cstat-no" title="statement not covered">      stream.emit('data', array[i++])</span>
     }
-<span class="cstat-no" title="statement not covered" >    if(i == l &amp;&amp; !ended)</span>
-<span class="cstat-no" title="statement not covered" >      ended = true, stream.readable = false, stream.emit('end')</span>
+<span class="cstat-no" title="statement not covered">    if(i == l &amp;&amp; !ended)</span>
+<span class="cstat-no" title="statement not covered">      ended = true, stream.readable = false, stream.emit('end')</span>
   }
-<span class="cstat-no" title="statement not covered" >  process.nextTick(stream.resume)</span>
-<span class="cstat-no" title="statement not covered" >  stream.pause = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >     paused = true</span>
+<span class="cstat-no" title="statement not covered">  process.nextTick(stream.resume)</span>
+<span class="cstat-no" title="statement not covered">  stream.pause = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">     paused = true</span>
   }
-<span class="cstat-no" title="statement not covered" >  stream.destroy = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >    ended = true</span>
-<span class="cstat-no" title="statement not covered" >    stream.emit('close')</span>
+<span class="cstat-no" title="statement not covered">  stream.destroy = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">    ended = true</span>
+<span class="cstat-no" title="statement not covered">    stream.emit('close')</span>
   }
-<span class="cstat-no" title="statement not covered" >  return stream</span>
+<span class="cstat-no" title="statement not covered">  return stream</span>
 }
 &nbsp;
 //
@@ -1006,56 +1004,56 @@ es.readArray = <span class="fstat-no" title="function not covered" >function (ar
 //
 &nbsp;
 es.readable =
-<span class="fstat-no" title="function not covered" >function (func, continueOnError) {</span>
-<span class="cstat-no" title="statement not covered" >  var stream = new Stream()</span>
+<span class="fstat-no" title="function not covered">function (func, continueOnError) {</span>
+<span class="cstat-no" title="statement not covered">  var stream = new Stream()</span>
     , i = 0
     , paused = false
     , ended = false
     , reading = false
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  stream.readable = true</span>
-<span class="cstat-no" title="statement not covered" >  stream.writable = false</span>
+<span class="cstat-no" title="statement not covered">  stream.readable = true</span>
+<span class="cstat-no" title="statement not covered">  stream.writable = false</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if('function' !== typeof func)</span>
-<span class="cstat-no" title="statement not covered" >    throw new Error('event-stream.readable expects async function')</span>
+<span class="cstat-no" title="statement not covered">  if('function' !== typeof func)</span>
+<span class="cstat-no" title="statement not covered">    throw new Error('event-stream.readable expects async function')</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  stream.on('end', <span class="fstat-no" title="function not covered" >function () {</span> <span class="cstat-no" title="statement not covered" >ended = true }</span>)</span>
+<span class="cstat-no" title="statement not covered">  stream.on('end', <span class="fstat-no" title="function not covered">function () {</span> <span class="cstat-no" title="statement not covered">ended = true }</span>)</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >  function get (err, data) {</span>
+<span class="fstat-no" title="function not covered">  function get (err, data) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if(err) {</span>
-<span class="cstat-no" title="statement not covered" >      stream.emit('error', err)</span>
-<span class="cstat-no" title="statement not covered" >      if(!continueOnError) <span class="cstat-no" title="statement not covered" >stream.emit('end')</span></span>
-    } else <span class="cstat-no" title="statement not covered" >if (arguments.length &gt; 1)</span>
-<span class="cstat-no" title="statement not covered" >      stream.emit('data', data)</span>
+<span class="cstat-no" title="statement not covered">    if(err) {</span>
+<span class="cstat-no" title="statement not covered">      stream.emit('error', err)</span>
+<span class="cstat-no" title="statement not covered">      if(!continueOnError) <span class="cstat-no" title="statement not covered">stream.emit('end')</span></span>
+    } else <span class="cstat-no" title="statement not covered">if (arguments.length &gt; 1)</span>
+<span class="cstat-no" title="statement not covered">      stream.emit('data', data)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    immediately(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >      if(ended || paused || reading) <span class="cstat-no" title="statement not covered" >return</span></span>
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        reading = true</span>
-<span class="cstat-no" title="statement not covered" >        func.call(stream, i++, <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >          reading = false</span>
-<span class="cstat-no" title="statement not covered" >          get.apply(null, arguments)</span>
+<span class="cstat-no" title="statement not covered">    immediately(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">      if(ended || paused || reading) <span class="cstat-no" title="statement not covered">return</span></span>
+<span class="cstat-no" title="statement not covered">      try {</span>
+<span class="cstat-no" title="statement not covered">        reading = true</span>
+<span class="cstat-no" title="statement not covered">        func.call(stream, i++, <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">          reading = false</span>
+<span class="cstat-no" title="statement not covered">          get.apply(null, arguments)</span>
         })
       } catch (err) {
-<span class="cstat-no" title="statement not covered" >        stream.emit('error', err)</span>
+<span class="cstat-no" title="statement not covered">        stream.emit('error', err)</span>
       }
     })
   }
-<span class="cstat-no" title="statement not covered" >  stream.resume = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >    paused = false</span>
-<span class="cstat-no" title="statement not covered" >    get()</span>
+<span class="cstat-no" title="statement not covered">  stream.resume = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">    paused = false</span>
+<span class="cstat-no" title="statement not covered">    get()</span>
   }
-<span class="cstat-no" title="statement not covered" >  process.nextTick(get)</span>
-<span class="cstat-no" title="statement not covered" >  stream.pause = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >     paused = true</span>
+<span class="cstat-no" title="statement not covered">  process.nextTick(get)</span>
+<span class="cstat-no" title="statement not covered">  stream.pause = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">     paused = true</span>
   }
-<span class="cstat-no" title="statement not covered" >  stream.destroy = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >    stream.emit('end')</span>
-<span class="cstat-no" title="statement not covered" >    stream.emit('close')</span>
-<span class="cstat-no" title="statement not covered" >    ended = true</span>
+<span class="cstat-no" title="statement not covered">  stream.destroy = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">    stream.emit('end')</span>
+<span class="cstat-no" title="statement not covered">    stream.emit('close')</span>
+<span class="cstat-no" title="statement not covered">    ended = true</span>
   }
-<span class="cstat-no" title="statement not covered" >  return stream</span>
+<span class="cstat-no" title="statement not covered">  return stream</span>
 }
 &nbsp;
 &nbsp;
@@ -1063,16 +1061,16 @@ es.readable =
 // map sync
 //
 &nbsp;
-es.mapSync = <span class="fstat-no" title="function not covered" >function (sync) {</span>
-<span class="cstat-no" title="statement not covered" >  return es.through(<span class="fstat-no" title="function not covered" >function write(data) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var mappedData</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      mappedData = sync(data)</span>
+es.mapSync = <span class="fstat-no" title="function not covered">function (sync) {</span>
+<span class="cstat-no" title="statement not covered">  return es.through(<span class="fstat-no" title="function not covered">function write(data) {</span></span>
+<span class="cstat-no" title="statement not covered">    var mappedData</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      mappedData = sync(data)</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      return this.emit('error', err)</span>
+<span class="cstat-no" title="statement not covered">      return this.emit('error', err)</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (mappedData !== undefined)</span>
-<span class="cstat-no" title="statement not covered" >      this.emit('data', mappedData)</span>
+<span class="cstat-no" title="statement not covered">    if (mappedData !== undefined)</span>
+<span class="cstat-no" title="statement not covered">      this.emit('data', mappedData)</span>
   })
 }
 &nbsp;
@@ -1080,12 +1078,12 @@ es.mapSync = <span class="fstat-no" title="function not covered" >function (sync
 // log just print out what is coming through the stream, for debugging
 //
 &nbsp;
-es.log = <span class="fstat-no" title="function not covered" >function (name) {</span>
-<span class="cstat-no" title="statement not covered" >  return es.through(<span class="fstat-no" title="function not covered" >function (data) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var args = [].slice.call(arguments)</span>
-<span class="cstat-no" title="statement not covered" >    if(name) <span class="cstat-no" title="statement not covered" >console.error(name, data)</span></span>
-    else     <span class="cstat-no" title="statement not covered" >console.error(data)</span>
-<span class="cstat-no" title="statement not covered" >    this.emit('data', data)</span>
+es.log = <span class="fstat-no" title="function not covered">function (name) {</span>
+<span class="cstat-no" title="statement not covered">  return es.through(<span class="fstat-no" title="function not covered">function (data) {</span></span>
+<span class="cstat-no" title="statement not covered">    var args = [].slice.call(arguments)</span>
+<span class="cstat-no" title="statement not covered">    if(name) <span class="cstat-no" title="statement not covered">console.error(name, data)</span></span>
+    else     <span class="cstat-no" title="statement not covered">console.error(data)</span>
+<span class="cstat-no" title="statement not covered">    this.emit('data', data)</span>
   })
 }
 &nbsp;
@@ -1094,9 +1092,9 @@ es.log = <span class="fstat-no" title="function not covered" >function (name) {<
 // child -- pipe through a child process
 //
 &nbsp;
-es.child = <span class="fstat-no" title="function not covered" >function (child) {</span>
+es.child = <span class="fstat-no" title="function not covered">function (child) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return es.duplex(child.stdin, child.stdout)</span>
+<span class="cstat-no" title="statement not covered">  return es.duplex(child.stdin, child.stdout)</span>
 &nbsp;
 }
 &nbsp;
@@ -1106,31 +1104,31 @@ es.child = <span class="fstat-no" title="function not covered" >function (child)
 // must be used after es.split() to ensure that each chunk represents a line
 // source.pipe(es.split()).pipe(es.parse())
 &nbsp;
-es.parse = <span class="fstat-no" title="function not covered" >function (options) {</span>
-<span class="cstat-no" title="statement not covered" >  var emitError = !!(options ? options.error : false)</span>
-<span class="cstat-no" title="statement not covered" >  return es.through(<span class="fstat-no" title="function not covered" >function (data) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var obj</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      if(data) //ignore empty lines</span>
-<span class="cstat-no" title="statement not covered" >        obj = JSON.parse(data.toString())</span>
+es.parse = <span class="fstat-no" title="function not covered">function (options) {</span>
+<span class="cstat-no" title="statement not covered">  var emitError = !!(options ? options.error : false)</span>
+<span class="cstat-no" title="statement not covered">  return es.through(<span class="fstat-no" title="function not covered">function (data) {</span></span>
+<span class="cstat-no" title="statement not covered">    var obj</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      if(data) //ignore empty lines</span>
+<span class="cstat-no" title="statement not covered">        obj = JSON.parse(data.toString())</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      if (emitError)</span>
-<span class="cstat-no" title="statement not covered" >        return this.emit('error', err)</span>
-<span class="cstat-no" title="statement not covered" >      return console.error(err, 'attempting to parse:', data)</span>
+<span class="cstat-no" title="statement not covered">      if (emitError)</span>
+<span class="cstat-no" title="statement not covered">        return this.emit('error', err)</span>
+<span class="cstat-no" title="statement not covered">      return console.error(err, 'attempting to parse:', data)</span>
     }
     //ignore lines that where only whitespace.
-<span class="cstat-no" title="statement not covered" >    if(obj !== undefined)</span>
-<span class="cstat-no" title="statement not covered" >      this.emit('data', obj)</span>
+<span class="cstat-no" title="statement not covered">    if(obj !== undefined)</span>
+<span class="cstat-no" title="statement not covered">      this.emit('data', obj)</span>
   })
 }
 //
 // stringify
 //
 &nbsp;
-es.stringify = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  var Buffer = require('buffer').Buffer</span>
-<span class="cstat-no" title="statement not covered" >  return es.mapSync(<span class="fstat-no" title="function not covered" >function (e){</span></span>
-<span class="cstat-no" title="statement not covered" >    return JSON.stringify(Buffer.isBuffer(e) ? e.toString() : e) + '\n'</span>
+es.stringify = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  var Buffer = require('buffer').Buffer</span>
+<span class="cstat-no" title="statement not covered">  return es.mapSync(<span class="fstat-no" title="function not covered">function (e){</span></span>
+<span class="cstat-no" title="statement not covered">    return JSON.stringify(Buffer.isBuffer(e) ? e.toString() : e) + '\n'</span>
   })
 }
 &nbsp;
@@ -1142,8 +1140,8 @@ es.stringify = <span class="fstat-no" title="function not covered" >function () 
 // for smallish responses, who cares?
 // I need this for shadow-npm so it's only relatively small json files.
 &nbsp;
-es.replace = <span class="fstat-no" title="function not covered" >function (from, to) {</span>
-<span class="cstat-no" title="statement not covered" >  return es.pipeline(es.split(from), es.join(to))</span>
+es.replace = <span class="fstat-no" title="function not covered">function (from, to) {</span>
+<span class="cstat-no" title="statement not covered">  return es.pipeline(es.split(from), es.join(to))</span>
 }
 &nbsp;
 //
@@ -1152,19 +1150,19 @@ es.replace = <span class="fstat-no" title="function not covered" >function (from
 // this is still supported for legacy reasons.
 //
 &nbsp;
-es.join = <span class="fstat-no" title="function not covered" >function (str) {</span>
+es.join = <span class="fstat-no" title="function not covered">function (str) {</span>
 &nbsp;
   //legacy api
-<span class="cstat-no" title="statement not covered" >  if('function' === typeof str)</span>
-<span class="cstat-no" title="statement not covered" >    return es.wait(str)</span>
+<span class="cstat-no" title="statement not covered">  if('function' === typeof str)</span>
+<span class="cstat-no" title="statement not covered">    return es.wait(str)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var first = true</span>
-<span class="cstat-no" title="statement not covered" >  return es.through(<span class="fstat-no" title="function not covered" >function (data) {</span></span>
-<span class="cstat-no" title="statement not covered" >    if(!first)</span>
-<span class="cstat-no" title="statement not covered" >      this.emit('data', str)</span>
-<span class="cstat-no" title="statement not covered" >    first = false</span>
-<span class="cstat-no" title="statement not covered" >    this.emit('data', data)</span>
-<span class="cstat-no" title="statement not covered" >    return true</span>
+<span class="cstat-no" title="statement not covered">  var first = true</span>
+<span class="cstat-no" title="statement not covered">  return es.through(<span class="fstat-no" title="function not covered">function (data) {</span></span>
+<span class="cstat-no" title="statement not covered">    if(!first)</span>
+<span class="cstat-no" title="statement not covered">      this.emit('data', str)</span>
+<span class="cstat-no" title="statement not covered">    first = false</span>
+<span class="cstat-no" title="statement not covered">    this.emit('data', data)</span>
+<span class="cstat-no" title="statement not covered">    return true</span>
   })
 }
 &nbsp;
@@ -1173,27 +1171,28 @@ es.join = <span class="fstat-no" title="function not covered" >function (str) {<
 // wait. callback when 'end' is emitted, with all chunks appended as string.
 //
 &nbsp;
-es.wait = <span class="fstat-no" title="function not covered" >function (callback) {</span>
-<span class="cstat-no" title="statement not covered" >  var arr = []</span>
-<span class="cstat-no" title="statement not covered" >  return es.through(<span class="fstat-no" title="function not covered" >function (data) {</span> <span class="cstat-no" title="statement not covered" >arr.push(data) }</span>,</span>
-<span class="fstat-no" title="function not covered" >    function () {</span>
-<span class="cstat-no" title="statement not covered" >      var body = Buffer.isBuffer(arr[0]) ? Buffer.concat(arr)</span>
+es.wait = <span class="fstat-no" title="function not covered">function (callback) {</span>
+<span class="cstat-no" title="statement not covered">  var arr = []</span>
+<span class="cstat-no" title="statement not covered">  return es.through(<span class="fstat-no" title="function not covered">function (data) {</span> <span class="cstat-no" title="statement not covered">arr.push(data) }</span>,</span>
+<span class="fstat-no" title="function not covered">    function () {</span>
+<span class="cstat-no" title="statement not covered">      var body = Buffer.isBuffer(arr[0]) ? Buffer.concat(arr)</span>
         : arr.join('')
-<span class="cstat-no" title="statement not covered" >      this.emit('data', body)</span>
-<span class="cstat-no" title="statement not covered" >      this.emit('end')</span>
-<span class="cstat-no" title="statement not covered" >      if(callback) <span class="cstat-no" title="statement not covered" >callback(null, body)</span></span>
+<span class="cstat-no" title="statement not covered">      this.emit('data', body)</span>
+<span class="cstat-no" title="statement not covered">      this.emit('end')</span>
+<span class="cstat-no" title="statement not covered">      if(callback) <span class="cstat-no" title="statement not covered">callback(null, body)</span></span>
     })
 }
 &nbsp;
-es.pipeable = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  throw new Error('[EVENT-STREAM] es.pipeable is deprecated')</span>
+es.pipeable = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  throw new Error('[EVENT-STREAM] es.pipeable is deprecated')</span>
 }
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 08:03:32 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sun Apr 16 2017 08:06:07 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
