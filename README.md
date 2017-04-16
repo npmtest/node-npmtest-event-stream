@@ -1,7 +1,7 @@
 # test coverage for  [event-stream (v3.3.4)](http://github.com/dominictarr/event-stream)  [![npm package](https://img.shields.io/npm/v/npmtest-event-stream.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-event-stream) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-event-stream.svg)](https://travis-ci.org/npmtest/node-npmtest-event-stream)
 #### construct pipes of streams of events
 
-[![NPM](https://nodei.co/npm/event-stream.png?downloads=true)](https://www.npmjs.com/package/event-stream)
+[![NPM](https://nodei.co/npm/event-stream.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/event-stream)
 
 | git-branch : | [alpha](https://github.com/npmtest/node-npmtest-event-stream/tree/alpha)|
 |--:|:--|
@@ -9,11 +9,11 @@
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-event-stream/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-event-stream/build/test-report.html)|
 | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-event-stream/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-event-stream/tree/gh-pages/build)|
 
-[![istanbul-coverage](https://npmtest.github.io/node-npmtest-event-stream/build/screenCapture.buildCustomOrg.browser.coverage.html.png)](https://npmtest.github.io/node-npmtest-event-stream/build/coverage.html/index.html)
+[![istanbul-coverage](https://npmtest.github.io/node-npmtest-event-stream/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png)](https://npmtest.github.io/node-npmtest-event-stream/build/coverage.html/index.html)
 
-[![test-report](https://npmtest.github.io/node-npmtest-event-stream/build/screenCapture.buildCustomOrg.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmtest%252Fnode-npmtest-event-stream%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-event-stream/build/test-report.html)
+[![test-report](https://npmtest.github.io/node-npmtest-event-stream/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-event-stream/build/test-report.html)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-event-stream/build/screenCapture.buildApidoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-event-stream%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-event-stream/build/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-event-stream/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-event-stream/build/apidoc.html)
 
 ![npmPackageListing](https://npmtest.github.io/node-npmtest-event-stream/build/screenCapture.npmPackageListing.svg)
 
@@ -28,7 +28,6 @@
 {
     "author": {
         "name": "Dominic Tarr",
-        "email": "dominic.tarr@gmail.com",
         "url": "http://bit.ly/dominictarr"
     },
     "bugs": {
@@ -61,13 +60,11 @@
     "license": "MIT",
     "maintainers": [
         {
-            "name": "dominictarr",
-            "email": "dominic.tarr@gmail.com"
+            "name": "dominictarr"
         }
     ],
     "name": "event-stream",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/dominictarr/event-stream.git"
