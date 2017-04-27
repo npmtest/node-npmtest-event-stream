@@ -1,6 +1,6 @@
 # npmtest-event-stream
 
-#### test coverage for  [event-stream (v3.3.4)](http://github.com/dominictarr/event-stream)  [![npm package](https://img.shields.io/npm/v/npmtest-event-stream.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-event-stream) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-event-stream.svg)](https://travis-ci.org/npmtest/node-npmtest-event-stream)
+#### basic test coverage for  [event-stream (v3.3.4)](http://github.com/dominictarr/event-stream)  [![npm package](https://img.shields.io/npm/v/npmtest-event-stream.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-event-stream) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-event-stream.svg)](https://travis-ci.org/npmtest/node-npmtest-event-stream)
 
 #### construct pipes of streams of events
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-event-stream/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-event-stream/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-event-stream/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-event-stream/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-event-stream/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-event-stream/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-event-stream/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-event-stream/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-event-stream/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-event-stream/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-event-stream/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-event-stream/build/coverage.html/index.html)
 
@@ -104,7 +104,8 @@
             ]
         }
     },
-    "version": "3.3.4"
+    "version": "3.3.4",
+    "bin": {}
 }
 ```
 
